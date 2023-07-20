@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LavadoDeAutos</title>
+    <link rel="stylesheet" href="Index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header class="header">
+    <a href="#" class="logo">
+        <img src="Imagenes/Logo.jpg" alt="">
+    </a>
+    
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">Quiénes somos</a>
+        <a href="#Servicios">Servicios</a>
+        <a href="#Productos">Productos</a>
+        <a href="#Contact">Contacto</a>
+    </nav>
+    <div class="icons ">
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="fas fa-shopping-cart" id="cart-btn"></div>
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+
+    <div class="search-form">
+        <input type="search" id="search-box" placeholder="Busque Aqui...">
+        <label for="search-box" class="fas fa-search"></label>
+    </div>
+    <!-- Carrito de compras -->
+    <div class="cart-items-container">
+        <div class="cart-items-wrapper">
+          <div class="cart-item">
+            <span class="fas fa-times"></span>
+            <img src="Imagenes/Lavado.png" alt="">
+            <div class="content">
+              <h3>cart item 01</h3>
+              <div class="price">$10.000/-</div>
+            </div>
+          </div>
+          
+          <div class="cart-item">
+            <span class="fas fa-times"></span>
+            <img src="Imagenes/Aspirado.png" alt="">
+            <div class="content">
+              <h3>cart item 02</h3>
+              <div class="price">$10.000/-</div>
+            </div>
+          </div>
+          
+          <div class="cart-item">
+            <span class="fas fa-times"></span>
+            <img src="Imagenes/Personalizado.png" alt="">
+            <div class="content">
+              <h3>cart item 03</h3>
+              <div class="price">$10.000/-</div>
+            </div>
+          </div>
+          <a href="#"class="btn">Revisar Productos </a>
+        </div>
+      </div>
+</header>
+    <!-- seccion de casa -->
+<section class="home" id="home">
+
+  <div class="content">
+    <h3>fresh cooffe in the morning</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultrices massa vitae est tristique, commodo 
+    porta risus molestie. Mauris commodo purus libero, eget pretium justo facilisis a. Maecenas ultrices est eu viverra elementum. </p>
+    <a href="#" class="btn"> get yours now </a>
+  </div>
+
+</section>
+
+
+<!-- about section start -->
+<section class="about" id="about">
+
+  <h1 class="heading"><span> Quiénes </span> Somos </h1>
+
+  <div class="row">
+
+    <div class="image">
+      <img src="Imagenes/about.jpg" alt="...">
+    </div>
+
+    <div class="content">
+      <h3>¿Por que somos Diferentes?</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin 
+        fringilla tellus vel egestas porttitor. Morbi mollis facilisis mollis. Mauris congue tincidunt lorem, vel 
+      </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dicta, numquam ipsa labore quae rem officiis sequi nemo aliquam asperiores natus. Sapiente excepturi culpa illum mollitia aspernatur, quidem atque doloremque.</p>
+      <a href="#" class="btn"> leer mas </a>
+
+    </div>
+  </div>
+</section>
+<!-- Seccion Menu -->
+<section class="menu" id="menu">
+
+  <h1 class="heading">Nuestros <span>Servicios</span></h1>
+
+  <div class="box-container">
+
+    <div class="box">
+      <img src="Imagenes/Lavado.png" alt="">
+      <h3>Servicio Estandar</h3>
+      <div class="price">10.000 <span>20.99</span></div>
+      <a href="#" class="btn">Añadir al carro </a>
+    </div>
+
+    <div class="box">
+      <img src="Imagenes/Aspirado.png" alt="">
+      <h3>Servicio Premium</h3>
+      <div class="price">10.000 <span>20.99</span></div>
+      <a href="#" class="btn">Añadir al carro </a>
+    </div>
+
+    <div class="box">
+      <img src="Imagenes/Personalizado.png" alt="">
+      <h3>Servicio Personalizado</h3>
+      <div class="price">10.000 <span>20.99</span></div>
+      <a href="#" class="btn">Añadir al carro </a>
+    </div>
+
+
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h1 class="heading"><span>Contacto</span></h1>
+  <div class="row">
+    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.7537218461575!2d-70.58367622485457!3d-33.58574310445267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d718a032972d%3A0x45da5699698e2261!2sINACAP%20Puente%20Alto!5e0!3m2!1ses-419!2scl!4v1687958931831!5m2!1ses-419!2scl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <form action="">
+      <h3>Ponerse al Contacto</h3>
+      <div class="inputBox">
+        <span class="fas fa-user"></span>
+        <input type="text" placeholder="name">
+      </div>
+      <div class="inputBox">
+        <span class="fas fa-envelope"></span>
+        <input type="email" placeholder="email">
+      </div>
+      <div class="inputBox">
+        <span class="fas fa-phone"></span>
+        <input type="number" placeholder="number">
+      </div>
+      <div class="inputBox">
+        <span class="fas fa-envelope"></span>
+        <input type="email" placeholder="email">
+      </div>
+      <input type="submit" value="contact now" class="btn">
+    </form>
+  </div>
+</section>
+
+<section class="footer">
+  <div class="share">
+    <a href="https://es-la.facebook.com/" target="_blank" class="fab fa-facebook"></a>
+    <a href="https://twitter.com/i/flow/login?redirect_after_login=%2F%3Flang%3Des" target="_blank" class="fab fa-twitter"></a>
+    <a href="https://www.instagram.com/" target="_blank" class="fab fa-instagram"></a>
+    <a href="https://www.linkedin.com/home?original_referer=https%3A%2F%2Fwww.linkedin.com%2Fnotifications%2F%3Ffilter%3Dall" target="_blank" class="fab fa-linkedin"></a>
+    <a href="https://web.whatsapp.com/" target="_blank" class="fab fa-whatsapp"></a>
+  </div>
+ 
+  <div class="credit">
+    created by <span>Gousei</span> | All right reserved</div>
+</section>
+
+    <!--Conexion a javascript-->
+    <script src="index.js"></script>
+</body>
+
+
+
+</html>
