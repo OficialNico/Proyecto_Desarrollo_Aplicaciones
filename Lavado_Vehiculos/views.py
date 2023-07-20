@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from.views import Agendar_Hora
+from.models import Servicios, Agendar_Hora
 
 # Create your views here.
 
