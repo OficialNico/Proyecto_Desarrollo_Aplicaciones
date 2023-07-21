@@ -8,14 +8,12 @@ from .models import CustomUser
 # Create your views here.
 
 def Home(request):
-    TomarDatos = Home.objects.all()
-    Datos = { "DatosTablaHome":TomarDatos }
+    Servicios =Servicios.objects.order_by('-id')[:6]
+    Datos ={
+        "Servicios":Servicios,
+    }
     return render(request, "TemplatesHtml/Home.html", Datos)
 
-def Servicios(request):
-    TomarDatos = Servicios.objects.all()
-    Datos = { "DatosTablaServicios":TomarDatos }
-    return render(request, "TemplatesHtml/Servicios.html", Datos)
 
 def Agendar_Hora(request):
     TomarDatos = Agendar_Hora.objects.all()
