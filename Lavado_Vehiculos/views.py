@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from.models import Servicios, Agendar_Hora
-from .forms import Agendar_HoraForm
+from .form import Agendar_HoraForm
 
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.views import LoginView
@@ -49,4 +49,4 @@ def Agendar_Hora(request):
                 data["form"] = formulario
                 data["mensaje"] = "Error"
 
-            return render(request, "Admin/Agregar.html", data)
+            return render(request, "Servicios/Agendar_Hora.html", data)
