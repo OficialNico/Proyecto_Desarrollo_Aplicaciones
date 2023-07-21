@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser, Group, Permission
 
 # Create your models here.
 
@@ -14,4 +15,34 @@ class Agendar_Hora(models.Model):
     ValorProducto =models.CharField(max_length=10)
     FechaCompra =models.CharField(max_length=18)
     
+class CustomUser(AbstractUser):
+    Perfiles =(
+        ('cliente', 'Cliente'),
+        ('administrador', 'Administrador'),
+        ('bodeguero', 'Bodeguero'),
+    )
 
+    perfil = models.CharField(max_length=15, choices=Perfiles,default='cliente')
+    groups = models.ManyToManyField(
+        Group,
+        verbose_name='groups',
+        blank=True,
+        related_name='customuser_set',  # Agregar related_name único
+        related_query_name='customuser'
+    )
+    user_permissions = models.ManyToManyField(
+        Permission,
+        verbose_name='user permissions',
+        blank=True,
+        related_name='customuser_set',  # Agregar related_name único
+        related_query_name='customuser'
+    )
+    
+class Factura(models.Model):
+    usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    fecha = models.DateTimeField(auto_now_add=True)
+    total = models.DecimalField(max_digits=10, decimal_places=2)
+
+class ListaFacturas(models.Model):
+    usuario = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    facturas = models.ManyToManyField(Factura)    
