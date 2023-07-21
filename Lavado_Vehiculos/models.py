@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, Group, Permission
 
+from django.forms import ModelForm
+
 # Create your models here.
 
 class Servicios(models.Model):
@@ -10,11 +12,13 @@ class Servicios(models.Model):
     FechaCompra =models.CharField(max_length=18)
     
 class Agendar_Hora(models.Model):
-    Cliente =models.CharField(max_length=40)
-    Productos =models.CharField(max_length=40)
-    ValorProducto =models.CharField(max_length=10)
-    FechaCompra =models.CharField(max_length=18)
-    
+    nombre =models.CharField(max_length=40)
+    apellido =models.CharField(max_length=40)
+    telefono =models.CharField(max_length=10)
+    placas =models.CharField(max_length=18)
+    fecha =models.CharField(max_length=18)
+    hora =models.CharField(max_length=18)
+ 
 class CustomUser(AbstractUser):
     Perfiles =(
         ('cliente', 'Cliente'),

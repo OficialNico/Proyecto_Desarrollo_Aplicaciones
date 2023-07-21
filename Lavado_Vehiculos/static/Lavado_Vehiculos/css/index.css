@@ -365,6 +365,32 @@ header .navbar a:hover{
     text-transform: none;
     background: none;
 }
+#Agendar{
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      form {
+        width: 500px;
+        border: 1px solid black;
+        padding: 20px;
+      }
+      
+      input {
+        width: 100%;
+        border: none;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      
+      h1 {
+        text-align: center;
+      }
+}
 
 /* Lo ultimo */
 .footer{
@@ -420,17 +446,6 @@ header .navbar a:hover{
 .footer .credit span{
     color: #409dc4;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* Ajuste de los objetos automatico */
