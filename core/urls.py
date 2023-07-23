@@ -24,4 +24,6 @@ urlpatterns = [
     path('', views.Home, name="Home"),
     path('1/', views.Servicios, name="Servicios"),
     path('2/', views.Agendar_Hora, name="Agendar_Hora"),
+    path('3/', views.Listar, name="Listar"),
+    
 ]

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center align-middle">Lista de Marcas</h2>
+        <table class="table">
+          <thead>
+            <tr>
+                <th class="text-center align-middle">Nombre</th>
+                <th class="text-center align-middle">Descripcion</th>
+                <th class="text-center align-middle">Img</th>
+                <th class="text-center align-middle">Modificar</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for prod in producto %}
+            <tr>
+                <td class="text-center align-middle w-25">{{prod.nombre}}</td>
+                <td class="text-center align-middle w-50">{{prod.descripcion}}</td>
+                <td class="text-center align-middle w-25"><img src="{{prod.imagen.url}}" class="w-100 rounded mx-auto d-block" alt=""></td>
+                <td class="text-center align-middle" ><a href="{% url 'modificar_producto' filtro='aro' id=prod.id %}">
+                  <span class="material-symbols-outlined">
+                    box_edit
+                    </span>
+                </a></td>
+                <td class="text-center align-middle" ><a href="{% url 'eliminar_producto' filtro='aro' id=prod.id %}">
+                  <span class="material-symbols-outlined">
+                    delete
+                    </span>
+                </a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>  <!-- product_list.html -->
+    
+</body>
+</html>

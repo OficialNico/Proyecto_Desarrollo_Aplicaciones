@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from.models import Servicios, Agendar_Hora
+from .models import Servicios, Agendar_Hora
 from .form import Agendar_HoraForm
 
 from django.contrib.auth import authenticate, login
@@ -31,3 +31,10 @@ def Agendar_Hora(request):
                 data["mensaje"] = "Error"
 
         return render(request, "Servicios/Agendar_Hora.html", data)
+
+def Listar(request):
+        agendar_hora = Agendar_Hora.objects.order_by('-id')[:1]
+        data = {
+         'agendar_hora': agendar_hora
+         }
+        return render(request,'Admin/Listar.html', data)

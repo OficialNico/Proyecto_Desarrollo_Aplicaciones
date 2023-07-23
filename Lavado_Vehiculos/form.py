@@ -5,3 +5,7 @@ class Agendar_HoraForm(forms.ModelForm):
     class Meta:
         model = Agendar_Hora
         fields = '__all__'
+        
+        widgets = {
+            "fecha" : forms.SelectDateWidget()
+        }
