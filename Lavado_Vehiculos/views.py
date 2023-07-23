@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
-from .models import Servicios, Agendar_Hora
+from .models import Servicios
 from .form import Agendar_HoraForm
+from Lavado_Vehiculos.models import Agendar_Hora
 
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.views import LoginView
@@ -15,7 +16,7 @@ def Home(request):
     }
     return render(request, "Home/Home.html", Datos)
 
-def Agendar_Hora(request):
+def Agregar_Hora(request):
 
         data = {
         'form' :Agendar_HoraForm(),
@@ -33,8 +34,8 @@ def Agendar_Hora(request):
         return render(request, "Servicios/Agendar_Hora.html", data)
 
 def Listar(request):
-        agendar_hora = Agendar_Hora.objects.order_by('-id')[:1]
+        agendar_hora = Agendar_Hora.objects.all()
         data = {
-         'agendar_hora': agendar_hora
-         }
+            'agendar_hora': agendar_hora
+        }
         return render(request,'Admin/Listar.html', data)
