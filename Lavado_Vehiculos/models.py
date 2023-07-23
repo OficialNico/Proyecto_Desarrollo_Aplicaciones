@@ -12,12 +12,12 @@ class Servicios(models.Model):
     FechaCompra =models.CharField(max_length=18)
     
 class Agendar_Hora(models.Model):
-    nombre =models.CharField(max_length=40)
-    apellido =models.CharField(max_length=40)
-    telefono =models.CharField(max_length=10)
-    placas =models.CharField(max_length=18)
-    fecha =models.CharField(max_length=18)
-    hora =models.CharField(max_length=18)
+    nombre =models.CharField(max_length=40, null=True)
+    apellido =models.CharField(max_length=40, null=True)
+    telefono =models.CharField(max_length=10, null=True)
+    placas =models.CharField(max_length=18, null=True)
+    fecha =models.CharField(max_length=18, null=True)
+    hora =models.CharField(max_length=18, null=True)
  
 class CustomUser(AbstractUser):
     Perfiles =(

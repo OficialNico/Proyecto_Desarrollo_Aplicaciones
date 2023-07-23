@@ -83,7 +83,7 @@ pymysql.version_info = (1, 4, 3, "final", 0)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'lavadovehiculos',
+        'NAME': 'lavadodevehiculos',
         'USER': 'root',
         'PASSWORD': '',
 

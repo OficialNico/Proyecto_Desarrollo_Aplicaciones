@@ -15,25 +15,6 @@ def Home(request):
     }
     return render(request, "Home/Home.html", Datos)
 
-
-def Agendar_Hora(request):
-    TomarDatos = Agendar_Hora.objects.all()
-    Datos = { "DatosTablaAgendar_Hora":TomarDatos }
-    return render(request, "Servicios/Agendar_Hora.html", Datos)
-
-def Agendar_Hora_view(request):
-    if request.method == 'POST':
-        form =Agendar_HoraForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("Agendar_Hora")
-    else:
-        form =Agendar_HoraForm()
-    return render(request, "Servicios/Agendar_Hora.html", {'form': form})
-
-
-
-
 def Agendar_Hora(request):
 
         data = {
@@ -41,7 +22,7 @@ def Agendar_Hora(request):
         }
 
         if request.method == 'POST':
-            formulario = Agendar_HoraForm(data=request.POST, files=request.FILES)
+            formulario = Agendar_HoraForm(data=request.POST)
             if formulario.is_valid():
                 formulario.save()
                 data["mensaje"] = "guardado correctamente"
@@ -49,4 +30,4 @@ def Agendar_Hora(request):
                 data["form"] = formulario
                 data["mensaje"] = "Error"
 
-            return render(request, "Servicios/Agendar_Hora.html", data)
+        return render(request, "Servicios/Agendar_Hora.html", data)
