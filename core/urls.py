@@ -25,5 +25,9 @@ urlpatterns = [
     path('1/', views.Servicios, name="Servicios"),
     path('2/', views.Agregar_Hora, name="Agendar_Hora"),
     path('3/', views.Listar, name="Listar"),
+    path('Modificar/<id>/', views.Modificar, name="Modificar"),
+    path('Eliminar/<id>/', views.Eliminar, name="Eliminar"),
+    
+    
     
 ]

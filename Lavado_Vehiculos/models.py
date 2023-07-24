@@ -18,6 +18,8 @@ class Agendar_Hora(models.Model):
     placas =models.CharField(max_length=18, null=True)
     fecha =models.CharField(max_length=18, null=True)
     hora =models.CharField(max_length=18, null=True)
+    def str(self):
+        return self.nombre
  
 class CustomUser(AbstractUser):
     Perfiles =(

@@ -36,14 +36,16 @@
                 </a></td>
                 </a></td>
             </tr>
-            {% endfor %}
           </tbody>
-        </table>
-        <a href="{% url 'Agendar_Hora' %}"><button type="button">Regresar</button></a>
-        <a href="{% url 'Agendar_Hora' %}"><button type="button">Modificar</button></a>
-        <a href="{% url 'Agendar_Hora' %}"><button type="button">Eliminar</button></a>
-      </div>  <!-- product_list.html -->
+          <td>
 
-   
+            <a href="{% url 'Modificar' prod.id %}"><button type="button">Modificar</button></a>
+            <a href="{% url 'Eliminar' prod.id %}"><button type="button">Eliminar</button></a>
+          </td>  
+      </div>  <!-- product_list.html -->
+      {% endfor %}
+      <a href="{% url 'Agendar_Hora' %}"><button type="button">Regresar</button></a>
+    </table>
+
 </body>
 </html>

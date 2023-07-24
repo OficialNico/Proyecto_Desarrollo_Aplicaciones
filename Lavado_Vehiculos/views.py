@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Servicios
 from .form import Agendar_HoraForm
 from Lavado_Vehiculos.models import Agendar_Hora
@@ -39,3 +39,23 @@ def Listar(request):
             'agendar_hora': agendar_hora
         }
         return render(request,'Admin/Listar.html', data)
+    
+def Modificar(request, id):   
+        agendar_hora = get_object_or_404(Agendar_Hora, id=id)
+        data = {
+            'form' : Agendar_HoraForm(instance=agendar_hora)
+        }
+        if request.method == 'POST':
+            formulario = Agendar_HoraForm(data=request.POST, instance=agendar_hora, files=request.FILES)
+            if formulario.is_valid():
+                formulario.save()
+                return redirect(to="Listar")
+            else:
+                data["form"] = formulario
+                data["mensaje"] = "Error"
+        return render(request, "Admin/Modificar.html", data)
+                
+def Eliminar(request, id):   
+        agendar_hora = get_object_or_404(Agendar_Hora, id=id)
+        agendar_hora.delete()
+        return redirect(to="Listar")
